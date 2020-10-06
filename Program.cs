@@ -17,8 +17,7 @@ namespace aspnetapp
             var host = Host.CreateDefaultBuilder()    
                 .ConfigureWebHostDefaults(webBuilder => { 
                     webBuilder.Configure(app => { 
-                        app.UseHttpsRedirection()
-                            .Run(async context => {
+                        app.Run(async context => {
                                 await context.Response.WriteAsync("Hello remote world from ASP.NET Core!");
                             });
                     });
